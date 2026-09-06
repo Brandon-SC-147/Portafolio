@@ -2,7 +2,7 @@
 
 Portafolio web profesional, moderno y responsive para presentar el perfil académico y profesional de Brandon Valenzuela Cubas, estudiante de Ingeniería de Tecnologías de Información y Sistemas en la Universidad ESAN.
 
-Diseñado para postular a oportunidades en **Data**, **QA**, **Automation**, **Software**, **Soporte TI** y mejora de procesos, con un tono neutral y enfocado en reclutadores.
+Diseñado para postular a distintas oportunidades en el área de Tecnologías de Información, con un perfil general en **tecnología, datos, procesos y desarrollo**, un tono neutral y enfocado en reclutadores.
 
 ## Tecnologías utilizadas
 
@@ -60,14 +60,14 @@ Campos opcionales que se pueden omitir si no aplican:
 - `logros` — lista con viñetas (usada en el proyecto IEMTRONICS).
 - `badge` — etiqueta tipo `🥇 1.er Puesto`.
 
-Para agregar la URL de una certificación, reemplaza `url: null` por el enlace correspondiente en el arreglo `CERTIFICACIONES`; al tener URL, la tarjeta mostrará "Ver credencial".
+Para agregar la URL de una certificación, reemplaza `url: null` por el enlace correspondiente en el arreglo `CERTIFICACIONES`; al tener URL, la tarjeta mostrará "Ver certificado ↗".
 
-## Cómo cambiar el CV
+## Cómo actualizar el CV
 
-1. Reemplaza el archivo `assets/documents/CV-Brandon-Valenzuela-Cubas.pdf` por tu CV actual.
-2. Mantén el mismo nombre de archivo para que todos los botones "Descargar CV" sigan funcionando.
+El CV se abre en una nueva pestaña desde Google Drive:
 
-> El archivo actual es un placeholder temporal.
+1. Abre `index.html` y reemplaza la URL del Drive en los tres botones "Descargar CV" (navbar y hero).
+2. La URL usada debe ser la vista pública del archivo (`https://drive.google.com/file/d/ID/view`).
 
 ## Cómo publicarlo mediante GitHub Pages
 
@@ -90,7 +90,7 @@ Para agregar la URL de una certificación, reemplaza `url: null` por el enlace c
 
 ## Notas de personalización
 
-- **Badge "Disponible para oportunidades":** se elimina borrando el elemento `<p class="hero-badge">` en `index.html`.
+- **Badge "Disponible para oportunidades profesionales":** se elimina borrando el elemento `<p class="hero-badge">` en `index.html`.
 - **Tarjeta de resumen del hero:** se elimina borrando el `<aside class="hero-card">`.
 - **Colores:** se ajustan en `:root` de `css/styles.css`, editando las variables `--color-primary`, `--color-accent`, etc.
 - **Idiomas:** se editan en la sección "Sobre mí" de `index.html`.

@@ -988,16 +988,50 @@ code {
   color: var(--color-muted);
 }
 
+.link-subtle,
 .cert-link {
-  margin-top: auto;
-  padding-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-accent-text);
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    text-decoration-color var(--transition);
 }
 
+.cert-link {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.link-subtle {
+  margin-top: 1.5rem;
+}
+
+.project-actions .link-subtle {
+  margin-top: 0.15rem;
+  align-self: center;
+}
+
+.link-arrow {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.link-subtle:hover,
 .cert-link:hover {
+  color: var(--color-accent-hover);
   text-decoration: underline;
+  text-decoration-color: rgba(127, 176, 255, 0.55);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.link-subtle:hover .link-arrow,
+.cert-link:hover .link-arrow {
+  transform: translateX(3px);
 }
 
 /* ------------------------------ Premios y logros --------------------------- */

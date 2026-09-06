@@ -68,13 +68,34 @@
   ];
 
   /* Cada certificación puede incluir una URL en el campo 'url'
-     para mostrar el enlace "Ver credencial". */
+     para mostrar el enlace "Ver certificado ↗". Si no tiene URL, no se muestra botón. */
   const CERTIFICACIONES = [
     { titulo: 'Excel Intermedio', organizacion: 'Udemy', anio: '2025', url: null },
     { titulo: 'SQL y Gestión de Bases de Datos', organizacion: 'Udemy', anio: '2025', url: null },
-    { titulo: 'Iniciación al Desarrollo con IA', organizacion: 'BIG School', anio: '2025', url: null },
-    { titulo: 'Desarrollo con IA: de 0 a Producción', organizacion: 'BIG School', anio: '2026', url: null },
-    { titulo: 'Desarrollo con IA: Programa con Agentes', organizacion: 'BIG School / MoureDev', anio: '2026', url: null }
+    {
+      titulo: 'Iniciación al Desarrollo con IA',
+      organizacion: 'BIG School',
+      anio: '2025',
+      url: 'https://drive.google.com/file/d/1lnTGc2ZAz2Il4zgkq9TO6R46StP3pw4B/view'
+    },
+    {
+      titulo: 'Desarrollo con IA: de 0 a Producción',
+      organizacion: 'BIG School',
+      anio: '2026',
+      url: 'https://drive.google.com/file/d/1z3Q2PAwfbZAa5DmRlRinP52s7aYNTjMq/view'
+    },
+    {
+      titulo: 'Desarrollo con IA: Programa con Agentes',
+      organizacion: 'BIG School / MoureDev',
+      anio: '2026',
+      url: 'https://drive.google.com/file/d/1Y6ACCMYplhl4E1GlTMMR82ZolulJFiZM/view'
+    },
+    {
+      titulo: 'Ciberseguridad y Hacking Ético',
+      organizacion: 'BIG School',
+      anio: '2026',
+      url: 'https://drive.google.com/file/d/1K_X5F_uqB34NpvI4vxi-PYKqMQZ8-SV0/view'
+    }
   ];
 
   /* ======================================================================
@@ -145,7 +166,16 @@
         acciones.appendChild(crearEnlace('Ver proyecto', proyecto.url, 'btn-primary'));
       }
       if (proyecto.publicacion) {
-        acciones.appendChild(crearEnlace('Ver publicación', proyecto.publicacion, 'btn-primary'));
+        const link = el('a', 'link-subtle');
+        link.href = proyecto.publicacion;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.setAttribute('aria-label', 'Ver publicación de ' + proyecto.titulo);
+        link.appendChild(document.createTextNode('Ver publicación '));
+        const arrow = el('span', 'link-arrow', '↗');
+        arrow.setAttribute('aria-hidden', 'true');
+        link.appendChild(arrow);
+        acciones.appendChild(link);
       }
       if (proyecto.github) {
         acciones.appendChild(crearEnlace('Código', proyecto.github, 'btn-outline'));
@@ -186,11 +216,15 @@
       card.appendChild(el('p', 'cert-org', certificacion.organizacion));
 
       if (certificacion.url) {
-        const link = el('a', 'cert-link', 'Ver credencial →');
+        const link = el('a', 'cert-link');
         link.href = certificacion.url;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.setAttribute('aria-label', 'Ver certificado de ' + certificacion.titulo);
+        link.appendChild(document.createTextNode('Ver certificado '));
+        const arrow = el('span', 'link-arrow', '↗');
+        arrow.setAttribute('aria-hidden', 'true');
+        link.appendChild(arrow);
         card.appendChild(link);
       }
 
