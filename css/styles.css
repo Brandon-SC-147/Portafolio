@@ -683,6 +683,11 @@ code {
   gap: 0.6rem;
 }
 
+.job-description {
+  margin-bottom: 1rem;
+  color: var(--color-muted);
+}
+
 .job-list li {
   position: relative;
   padding-left: 1.25rem;
