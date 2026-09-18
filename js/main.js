@@ -10,42 +10,117 @@
      Campos de cada proyecto:
        titulo      — nombre del proyecto
        anio        — año
+       categoria   — categoría: Web, Mobile, Data, QA o Research (opcional)
        descripcion — descripción breve
        tecnologias — arreglo de tecnologías (opcional)
-       logros      — arreglo de logros mostrados como lista (opcional)
+       logros      — arreglo de aspectos relevantes mostrados como lista (opcional)
        badge       — etiqueta superior tipo "🥇 1.er Puesto" (opcional)
        imagen      — ruta de imagen en assets/images/ (opcional)
        url         — enlace "Ver proyecto" (opcional, omitir si no existe)
-       github      — enlace "Código" al repositorio (opcional)
+       github      — enlace "GitHub" al repositorio (opcional)
        publicacion — enlace "Ver publicación" (opcional)
      ====================================================================== */
 
   const PROYECTOS = [
     {
+      titulo: 'DigiDex Web',
+      anio: '2026',
+      categoria: 'Web',
+      descripcion:
+        'Aplicación web interactiva para consultar y explorar información de Digimon mediante el consumo de una API REST.',
+      tecnologias: ['Vue 3', 'Quasar', 'JavaScript', 'Axios', 'Pinia', 'REST API'],
+      logros: [
+        'Consumo y procesamiento de API REST',
+        'Gestión de estado mediante Pinia',
+        'Filtros dinámicos y navegación entre vistas',
+        'Componentes reutilizables'
+      ],
+      github: 'https://github.com/Brandon-SC-147/DigiDex-Web'
+    },
+    {
+      titulo: 'Currency Converter App',
+      anio: '2026',
+      categoria: 'Mobile',
+      descripcion:
+        'Aplicación móvil Android para conversión de monedas con autenticación, persistencia de información e integración de tipos de cambio mediante API externa.',
+      tecnologias: ['Kotlin', 'Jetpack Compose', 'Firebase Auth', 'Cloud Firestore', 'Retrofit', 'Gson', 'REST API'],
+      logros: [
+        'Registro e inicio de sesión con Firebase Authentication',
+        'Persistencia de datos en Cloud Firestore',
+        'Consumo de API externa de tipos de cambio',
+        'Historial de conversiones'
+      ],
+      github: 'https://github.com/Brandon-SC-147/PC02VALENZUELA22101808'
+    },
+    {
+      titulo: 'Loan Calculator App',
+      anio: '2026',
+      categoria: 'Mobile',
+      descripcion:
+        'Aplicación Android desarrollada con Jetpack Compose para calcular la cuota mensual, los intereses y el total a pagar de un préstamo.',
+      tecnologias: ['Android', 'Kotlin', 'Jetpack Compose'],
+      logros: [
+        'Lógica de cálculo financiero',
+        'Validación de datos ingresados',
+        'Procesamiento de la información del usuario',
+        'Interfaz mediante Jetpack Compose'
+      ],
+      github: 'https://github.com/Brandon-SC-147/Loan-Calculator-App'
+    },
+    {
+      titulo: 'Laboratorios de QA y Automatización',
+      categoria: 'QA',
+      descripcion:
+        'Conjunto de prácticas y laboratorios orientados a pruebas funcionales, automatización web, API y móvil, y validación de aplicaciones en diferentes entornos.',
+      tecnologias: ['Cypress', 'Selenium', 'Playwright', 'Appium', 'Postman', 'JMeter'],
+      logros: [
+        'Pruebas funcionales web, API y móvil',
+        'Automatización de escenarios',
+        'Validación de servicios REST',
+        'Pruebas en distintos navegadores y dispositivos'
+      ]
+    },
+    {
+      titulo: 'Proyecto de Análisis y Reportería',
+      anio: '2025',
+      categoria: 'Data',
+      descripcion:
+        'Desarrollo de dashboards y reportes para el seguimiento de información académica y operativa, con organización y limpieza de bases de datos.',
+      tecnologias: ['Power BI', 'Excel', 'SQL', 'SQL Server'],
+      logros: [
+        'Organización y limpieza de información',
+        'Dashboards e indicadores (KPI)',
+        'Tablas dinámicas',
+        'Apoyo al análisis y la toma de decisiones'
+      ]
+    },
+    {
       titulo: 'Datatón ESAN — 1.er Puesto',
       anio: '2025',
-      descripcion:
-        'Procesamiento, análisis y visualización de datos para identificar patrones, tendencias e indicadores relevantes. Los resultados fueron presentados ante evaluadores y el proyecto obtuvo el primer puesto.',
-      tecnologias: ['Python', 'Data Analysis', 'Visualización de datos'],
+      categoria: 'Data',
       badge: '🥇 1.er Puesto',
-      imagen: null
-    },
-    {
-      titulo: 'Proyecto de Reportería y Seguimiento de Indicadores',
-      anio: '2025',
       descripcion:
-        'Desarrollo de dashboards y reportes para seguimiento de información académica y operativa. Organización, limpieza y estructuración de bases de datos utilizando Excel y SQL.',
-      tecnologias: ['Power BI', 'Excel', 'SQL']
-    },
-    {
-      titulo: 'Investigación IEMTRONICS',
-      anio: '2024',
-      descripcion:
-        'Participación en la organización de información técnica, documentación y coordinación de aportes para un trabajo científico desarrollado por un equipo multidisciplinario.',
+        'Procesamiento, análisis y visualización de datos para identificar patrones, tendencias e indicadores relevantes. Los resultados fueron presentados ante evaluadores.',
+      tecnologias: ['Python', 'Análisis de datos', 'Visualización de datos'],
       logros: [
-        'Publicación aceptada en Springer Nature',
-        'Indexada en Scopus',
-        'Indexada en EI Compendex'
+        'Procesamiento y validación de datos con Python',
+        'Identificación de patrones y tendencias',
+        'Visualizaciones e indicadores',
+        'Presentación de conclusiones ante evaluadores'
+      ]
+    },
+    {
+      titulo: 'IEMTRONICS 2024 — Colaborador en investigación',
+      anio: '2024',
+      categoria: 'Research',
+      descripcion:
+        'Participación en la organización de información técnica, documentación y estructuración de contenidos para un artículo científico desarrollado por un equipo multidisciplinario.',
+      tecnologias: ['Investigación', 'Documentación técnica'],
+      logros: [
+        'Organización de información técnica',
+        'Estructuración de contenidos para artículo científico',
+        'Apoyo a un equipo multidisciplinario',
+        'Publicación en Springer Nature — Scopus y EI Compendex'
       ],
       publicacion: 'https://link.springer.com/chapter/10.1007/978-981-97-4784-9_34'
     }
@@ -55,6 +130,7 @@
     {
       titulo: 'QA Automation — Nuevo proyecto',
       anio: '2026',
+      categoria: 'QA',
       descripcion: 'Descripción breve del proyecto.',
       tecnologias: ['Selenium', 'Python'],
       logros: [],
@@ -133,24 +209,25 @@
       const body = el('div', 'project-body');
       const fragmentBody = document.createDocumentFragment();
 
-      if (proyecto.badge) {
-        fragmentBody.appendChild(el('span', 'project-badge', proyecto.badge));
+      if (proyecto.categoria || proyecto.badge) {
+        const meta = el('div', 'project-meta');
+        if (proyecto.categoria) {
+          meta.appendChild(el('span', 'project-category', proyecto.categoria));
+        }
+        if (proyecto.badge) {
+          meta.appendChild(el('span', 'project-badge', proyecto.badge));
+        }
+        fragmentBody.appendChild(meta);
       }
 
       const head = el('div', 'project-head');
       head.appendChild(el('h3', 'project-title', proyecto.titulo));
-      head.appendChild(el('span', 'project-year', proyecto.anio));
+      if (proyecto.anio) {
+        head.appendChild(el('span', 'project-year', proyecto.anio));
+      }
       fragmentBody.appendChild(head);
 
       fragmentBody.appendChild(el('p', 'project-desc', proyecto.descripcion));
-
-      if (proyecto.logros && proyecto.logros.length) {
-        const list = el('ul', 'project-logros');
-        proyecto.logros.forEach(function (logro) {
-          list.appendChild(el('li', null, logro));
-        });
-        fragmentBody.appendChild(list);
-      }
 
       if (proyecto.tecnologias && proyecto.tecnologias.length) {
         const tech = el('ul', 'project-tech');
@@ -158,6 +235,14 @@
           tech.appendChild(el('li', 'tech-chip-card', nombre));
         });
         fragmentBody.appendChild(tech);
+      }
+
+      if (proyecto.logros && proyecto.logros.length) {
+        const list = el('ul', 'project-logros');
+        proyecto.logros.forEach(function (logro) {
+          list.appendChild(el('li', null, logro));
+        });
+        fragmentBody.appendChild(list);
       }
 
       const acciones = el('div', 'project-actions');
@@ -178,7 +263,9 @@
         acciones.appendChild(link);
       }
       if (proyecto.github) {
-        acciones.appendChild(crearEnlace('Código', proyecto.github, 'btn-outline'));
+        const link = crearEnlace('GitHub', proyecto.github, 'btn-outline');
+        link.setAttribute('aria-label', 'Ver repositorio de ' + proyecto.titulo);
+        acciones.appendChild(link);
       }
 
       if (acciones.children.length) {
